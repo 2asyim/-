@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>757</width>
-    <height>598</height>
+    <width>909</width>
+    <height>621</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>751</width>
-      <height>581</height>
+      <width>911</width>
+      <height>601</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -35,14 +35,14 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>471</width>
-        <height>271</height>
+        <width>601</width>
+        <height>201</height>
        </rect>
       </property>
       <property name="title">
        <string>기본정보입력</string>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -52,6 +52,12 @@
         </rect>
        </property>
        <layout class="QFormLayout" name="formLayout">
+        <property name="horizontalSpacing">
+         <number>4</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>5</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="Label_business_name">
           <property name="text">
@@ -73,7 +79,14 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_business_number"/>
+         <widget class="QLineEdit" name="lineEdit_business_number">
+          <property name="inputMask">
+           <string>000-00-00000;_</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="Label_ceo_name">
@@ -93,7 +106,11 @@
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_resident_number"/>
+         <widget class="QLineEdit" name="lineEdit_resident_number">
+          <property name="inputMask">
+           <string>000000-0000000;_</string>
+          </property>
+         </widget>
         </item>
         <item row="4" column="0">
          <widget class="QLabel" name="Label_contact">
@@ -103,50 +120,77 @@
          </widget>
         </item>
         <item row="4" column="1">
-         <widget class="QLineEdit" name="lineEdit_contact"/>
+         <widget class="QLineEdit" name="lineEdit_contact">
+          <property name="inputMask">
+           <string>000-0000-0000;_</string>
+          </property>
+         </widget>
         </item>
        </layout>
-      </widget>
-      <widget class="QPushButton" name="btn_attach_documents">
-       <property name="geometry">
-        <rect>
-         <x>330</x>
-         <y>210</y>
-         <width>121</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>추가 서류</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_register_delivery">
-       <property name="geometry">
-        <rect>
-         <x>330</x>
-         <y>240</y>
-         <width>121</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string> 대행사 계정</string>
-       </property>
       </widget>
       <widget class="QSplitter" name="splitter">
        <property name="geometry">
         <rect>
-         <x>250</x>
-         <y>120</y>
-         <width>201</width>
-         <height>81</height>
+         <x>260</x>
+         <y>30</y>
+         <width>199</width>
+         <height>161</height>
         </rect>
        </property>
        <property name="orientation">
         <enum>Qt::Orientation::Vertical</enum>
        </property>
-       <widget class="QWidget" name="">
+       <property name="handleWidth">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="layoutWidget">
+        <layout class="QFormLayout" name="formLayout_2">
+         <property name="horizontalSpacing">
+          <number>4</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>4</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="Lebel_fee">
+           <property name="text">
+            <string>기장료</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEdit_fee"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_hometax_id"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="Lebel_hometax_pw">
+           <property name="text">
+            <string>홈택스 PW</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_hometax_pw"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="Lebel_hometax_id">
+           <property name="text">
+            <string>홈택스 ID</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
         <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QRadioButton" name="radioButton_bookkeeping">
            <property name="text">
@@ -163,8 +207,11 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QRadioButton" name="radioButton_individual">
            <property name="text">
@@ -181,8 +228,11 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="Lebel_tax_type">
            <property name="text">
@@ -212,46 +262,27 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
-         <x>250</x>
+         <x>480</x>
          <y>30</y>
-         <width>201</width>
-         <height>81</height>
+         <width>106</width>
+         <height>71</height>
         </rect>
        </property>
-       <layout class="QFormLayout" name="formLayout_2">
-        <item row="0" column="0">
-         <widget class="QLabel" name="Lebel_fee">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="btn_register_delivery">
           <property name="text">
-           <string>기장료</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+           <string> 대행사 계정 관리</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit_fee"/>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_hometax_id"/>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="Lebel_hometax_pw">
+        <item>
+         <widget class="QPushButton" name="btn_attach_documents">
           <property name="text">
-           <string>홈택스 PW</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_hometax_pw"/>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="Lebel_hometax_id">
-          <property name="text">
-           <string>홈택스 ID</string>
+           <string>추가 서류 관리</string>
           </property>
          </widget>
         </item>
@@ -261,10 +292,10 @@
      <widget class="QGroupBox" name="groupBox_memo">
       <property name="geometry">
        <rect>
-        <x>480</x>
+        <x>620</x>
         <y>0</y>
-        <width>261</width>
-        <height>271</height>
+        <width>281</width>
+        <height>261</height>
        </rect>
       </property>
       <property name="title">
@@ -275,8 +306,8 @@
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>241</width>
-         <height>241</height>
+         <width>261</width>
+         <height>231</height>
         </rect>
        </property>
       </widget>
@@ -285,25 +316,518 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>280</y>
-        <width>741</width>
-        <height>271</height>
+        <y>260</y>
+        <width>901</width>
+        <height>311</height>
        </rect>
       </property>
       <property name="title">
        <string>거래처 List</string>
       </property>
+      <widget class="QTableWidget" name="tablewidget_client_list">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>881</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="columnCount">
+        <number>6</number>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>23</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>143</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>30</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>상호명</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>사업자등록번호</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>대표자명</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>주민등록번호</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>연락처</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>메모</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>20</y>
+         <width>511</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="lineedit_search_client"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_search_client">
+          <property name="text">
+           <string>검색</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>200</y>
+        <width>311</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="btn_save_client">
+         <property name="text">
+          <string>저장</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_edit_client">
+         <property name="text">
+          <string>수정</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_delete_client">
+         <property name="text">
+          <string>삭제</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_vat_report">
      <attribute name="title">
       <string>부가세 신고</string>
      </attribute>
+     <widget class="QTableWidget" name="tablewidget_vat_workflow">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>0</y>
+        <width>291</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>90</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>통장, 카드</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>부가세정리</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>예수금정리</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>4대보험료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>급여전표</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>감가상각</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>인적공제</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>임차료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>보험료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>사업대출내역</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>지방세내역</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>경조사비</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>기부금</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>간이영수증</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>신고완료</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tablewidget_vat_client_basic">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>251</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>83</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>상호명</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>사업자번호</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>대표자명</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tablewidget_vat_extra">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>0</y>
+        <width>71</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>69</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>자료, 메모</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tablewidget_vat_workflow_2">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>0</y>
+        <width>291</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>90</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>통장, 카드</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>부가세정리</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>예수금정리</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>4대보험료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>급여전표</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>감가상각</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>인적공제</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>임차료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>보험료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>사업대출내역</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>지방세내역</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>경조사비</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>기부금</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>간이영수증</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>신고완료</string>
+       </property>
+      </column>
+     </widget>
     </widget>
     <widget class="QWidget" name="tap_income_tax_report">
      <attribute name="title">
       <string>종합소득세 신고</string>
      </attribute>
+     <widget class="QTableWidget" name="tablewidget_income_workflow">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>0</y>
+        <width>581</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>90</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>통장, 카드</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>부가세정리</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>예수금정리</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>4대보험료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>급여전표</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>감가상각</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>인적공제</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>임차료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>보험료</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>사업대출내역</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>지방세내역</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>경조사비</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>기부금</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>간이영수증</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>신고완료</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tablewidget_income_client_basic">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>251</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>83</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>상호명</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>사업자번호</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>대표자명</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tablewidget_income_extra">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>0</y>
+        <width>71</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>69</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>자료, 메모</string>
+       </property>
+      </column>
+     </widget>
     </widget>
    </widget>
   </widget>
